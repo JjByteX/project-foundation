@@ -263,4 +263,4 @@ Please organize the result into sections like this:
 - Prioritize understanding the real codebase structure.
 - Help me build a reusable reference that can be pasted into future conversations.
 
-You should treat this as creating a **living migration document** for the project. Make it to an md file.
+You should treat this as creating a **living migration document** for the project. Create it as an .md file.
