@@ -387,7 +387,7 @@ products. Do not default to patterns already known from training.
 ## WHAT MUST NEVER HAPPEN
 ---
 
-- Do not duplicate labels across sidebar, header, subtitle, or page title
+- Do not duplicate labels across sidebar, header, subtitle, or page title unless there's a expand/collapse option in the sidebar
 - Do not use synonyms for the same concept on the same screen
 - Do not invent navigation patterns that don't follow platform conventions
 - Do not place primary actions in unexpected locations without flagging
