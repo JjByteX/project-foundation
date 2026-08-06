@@ -125,6 +125,21 @@ only when the content volume genuinely exceeds a single viewport.
 Never paginate or stack sections vertically just to add structure —
 if everything fits, let it fit.
 
+**Modal vs panel rule:**
+
+Use a centered modal when:
+- The content is a focused task, decision, form, preview, or confirmation
+- The content fits comfortably within a single viewport
+- The user should temporarily focus on one thing without navigating away
+
+Use a side panel / drawer only when:
+- The content needs comparison with the underlying page
+- The user needs to keep context visible while interacting
+- The content is too large for a modal but does not require a full page
+
+Never use a long right panel or side panel for content that fits naturally
+inside a centered modal. Prefer the smaller, more focused pattern.
+
 ---
 ## COMPONENT SIZING RULES
 ---
