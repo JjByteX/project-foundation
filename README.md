@@ -40,6 +40,7 @@ The AI will ask about anything left blank, such as the project name, goal, and t
 | `decision-log.md` | A record of major decisions and the reasons behind them |
 | `open-questions.md` | Questions only you can answer |
 | `ux-ui-guidelines.md` | Rules that govern every UI decision |
+| `ci-cd.md` | Optional. Automated checks and deployment, if your project needs them |
 
 ## About the UI
 
