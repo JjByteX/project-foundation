@@ -24,6 +24,8 @@ The AI will ask about anything left blank, such as the project name, goal, and t
 - Asks instead of assuming
 - Checks which files are connected before changing anything
 - Checks what already exists before suggesting something new
+- Follows the patterns already in your project instead of inventing new ones
+- Stays on the purpose of your request and does not add extras
 - Confirms direction with you at every major milestone
 - Logs decisions instead of silently overriding them
 - Warns you when it starts repeating itself or contradicting earlier work
