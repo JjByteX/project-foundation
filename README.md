@@ -49,3 +49,7 @@ The UI guidelines produce **very plain UI**, and that is intentional. The goal o
 ## Keep Reviewing
 
 This foundation gives you a bare-bones start, not a finished product. The AI generates the first version, and it still needs your critique. Review what it builds, question its choices, and push back where it misses the mark. The rules reduce mistakes, but they do not replace your judgment.
+
+## License
+
+MIT
