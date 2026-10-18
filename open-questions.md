@@ -58,13 +58,8 @@ Read thoroughly, do not skim:
 2. Read every question in this file, including Resolved. If the same
    question, or one with the same answer, exists → do not add it.
 3. Check the existing code and files for the answer.
-4. If the answer is found anywhere above → use it. Do not ask.
-5. Ask only if the answer is missing AND it needs a human decision.
-   Never ask something you can look up, infer from the files, or
-   decide within the constraints.
-
-When unsure whether to ask → re-read first. Then ask only if still
-unanswered.
+4. If the answer is found anywhere above → use it. Do not ask. Ask
+   only if it is missing AND needs a human decision.
 
 ---
 ## HOW TO ADD A QUESTION (AI instructions)
