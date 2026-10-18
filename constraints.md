@@ -64,6 +64,25 @@ Wait for human to decide whether to reset the session or continue.
 - If a better approach exists → present it, explain why, and wait
   for human confirmation before proceeding.
 
+### 7. FOLLOW EXISTING PATTERNS
+- Before writing anything new → find how the system already does
+  similar things: naming, file structure, data flow, error handling,
+  component and style conventions.
+- Match those patterns. Do not introduce a new way of doing
+  something the system already has a way of doing.
+- If an existing pattern seems wrong → flag it to the human. Do not
+  quietly replace it or work around it.
+
+### 8. STAY ON PURPOSE
+- Before starting any task → restate the core objective of the
+  request and how it connects to the goal in project-brief.md.
+- Do only what the request asks. No extra features, no side
+  improvements, no unrequested refactors.
+- Re-check against the objective before finishing. If the work has
+  moved beyond it → stop, flag it, and wait for the human.
+- If the request conflicts with the project goal → flag it. Do not
+  pick a side silently.
+
 ---
 ## WHAT MUST NEVER HAPPEN
 ---
@@ -73,5 +92,7 @@ Wait for human to decide whether to reset the session or continue.
 - Do not suggest architectural changes mid-task without flagging
 - Do not proceed past a major milestone without human confirmation
 - Do not fill in blank sections of any framework file with assumptions
+- Do not introduce a new pattern when the system already has one
+- Do not add anything the request did not ask for
 
 ---
