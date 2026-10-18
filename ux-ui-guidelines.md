@@ -63,13 +63,21 @@ Follow these unless the project explicitly overrides them:
 - Settings / profile → top right
 - Search → top bar
 
+**Profile menu:**
+- Clicking the profile opens a menu. Account items (account,
+  sign out, and similar) live inside it.
+- Do not list account items in the sidebar. The sidebar holds main
+  navigation only.
+- The menu closes on outside click or Escape.
+
 ---
 ## LABEL RULES
 ---
 
-- One label per concept. One place per label.
-- If the sidebar says "Settings" → the header does not repeat it.
-  The subtitle does not explain it. The page title does not restate it.
+- One label per concept. A label appears at most twice on a screen.
+- If the sidebar says "Settings" → one heading may repeat it: the
+  header or the page title. Pick one, never both. The subtitle does
+  not explain or restate it.
 - Never use synonyms for the same concept across the same screen.
   (Settings ≠ Configure ≠ Preferences — pick one, use it everywhere)
 - Labels should describe what the section IS, not explain it.
@@ -140,6 +148,13 @@ Use a side panel / drawer only when:
 Never use a long right panel or side panel for content that fits naturally
 inside a centered modal. Prefer the smaller, more focused pattern.
 
+**Help & FAQ and Settings:**
+- Neither is always needed. Add Settings only if there is something
+  to configure, and Help & FAQ only if users need guidance. If
+  unsure → ask the human.
+- Each one opens as a modal when its content fits within a single
+  viewport, otherwise as a full page. They do not have to match.
+
 ---
 ## COMPONENT SIZING RULES
 ---
@@ -184,6 +199,13 @@ vague words that produce generic output. When a style is requested:
   created through spacing, typography, and color proportion, not visual
   effects.
 
+**Shadows:** only on elements that float above the page (menus,
+modals, toasts). One shadow token. None on cards, panels, or buttons.
+
+**Text on images:** if text sits over an image, reveal it with a
+linear blur behind the text that fades out across the image. Not a
+color gradient overlay. Blur strength is a token.
+
 ---
 ## COLOR RULES
 ---
@@ -198,6 +220,25 @@ Follow the 60/30/10 proportion rule for all color usage.
 If the accent appears everywhere, it directs attention nowhere.
 The 60 and 30 are always the quieter, more neutral values.
 The 10 earns its weight by being used sparingly.
+
+**Palette:**
+- Do not create a palette from scratch. Use an established palette
+  from a well-known design system or open-source project that fits
+  the kind of system being built (for example GitHub Primer, Radix
+  Colors, Tailwind CSS, Atlassian, IBM Carbon, Shopify Polaris).
+- Search for 2 to 3 palettes that fit and present them to the human.
+  Wait for a choice.
+- Take the values from the source. Search them, do not fill them in
+  from memory. Then define them as color tokens.
+
+---
+## PILL RULES
+---
+
+- Text only. No dot or circle on the left.
+- Neutral text color.
+- The color is a tinted background token behind the text.
+- No outline or border.
 
 ---
 ## STATE RULES
@@ -259,6 +300,16 @@ confirm these states exist where applicable:
   interfaces.
 - If iconography is needed → use a proper icon from the project's
   icon library, not an emoji as a substitute
+
+---
+## COPY RULES
+---
+
+- No marketing filler: "Welcome back!", "Seamless", "Powerful",
+  "Get started in seconds". Plain, direct wording only.
+- No exclamation marks.
+- No placeholder names or text (John Doe, Acme Inc., Lorem ipsum).
+  Use realistic sample data that fits the system.
 
 ---
 ## CONSISTENCY RULES
@@ -345,6 +396,45 @@ Fix: define header height once as a CSS variable or token.
 Reference it everywhere. Never hardcode it per page.
 
 ---
+## PADDING TOKENS
+---
+
+Padding is defined once, as named tokens, and used everywhere. All
+values sit on the 8px grid.
+
+| Token | Value | Used for |
+|-------|-------|----------|
+| `padding-control` | 8px vertical, 16px horizontal | Buttons, inputs, selects, pills, badges, tabs, nav items, menu items |
+| `padding-cell` | 16px | Table cells, list rows, toasts, alerts, banners |
+| `padding-menu` | 8px | Dropdown and menu containers, tooltips |
+| `padding-card` | 24px | Cards, panels, containers |
+| `padding-modal` | 32px | Modals, dialogs |
+| `padding-header` | 0 vertical, 24px horizontal | Header (height comes from its own token) |
+| `padding-page` | 32px desktop, 16px mobile | Outer page content area |
+
+Rules:
+- Every element that holds content must have a padding token. Never
+  leave an element without padding.
+- Zero padding only for edge-to-edge elements (full-bleed images,
+  dividers). Name each one.
+- Every component takes its padding from one of these tokens. Never
+  write a raw padding value inside a component.
+- The same type of component has the same padding on every page and
+  in every state. Hover, loading, and disabled states must not
+  change padding or size.
+- Left and right padding are equal, and so are top and bottom,
+  unless the token above says otherwise.
+- No token fits → use the closest one, or flag it to the human before
+  adding a new token. Never use a one-off value.
+- If the project sets its own padding values → change them in this
+  table and in the token definitions only. Components never change.
+- Padding creates space inside a component. Space between
+  components uses the spacing scale, not padding tokens.
+
+Before marking any UI complete → check that every content-holding
+element has a padding token, and fix any that do not.
+
+---
 ## INSPIRATION RULES
 ---
 
@@ -364,6 +454,15 @@ products. Do not default to patterns already known from training.
 ---
 ## CARD AND TABLE RULES
 ---
+
+**Card restraint:**
+- A card is the exception, not the default. Before making one, ask:
+  can a line divider or spacing do the job?
+- If yes → use one container and divide it with a thin neutral line
+  or spacing, horizontal or vertical. Divider color and thickness
+  are tokens.
+- Use a separate card only when the item is independently meaningful,
+  has its own state, or needs its own user action.
 
 **Card nesting:**
 - Never place a card inside another card. An outer card that contains
@@ -398,11 +497,33 @@ products. Do not default to patterns already known from training.
   and forces the user to mentally reassemble what should have been
   presented as one unit.
 
+**Stat cards and card selectors:**
+- Do not add stat cards by default. Include one only if the number
+  leads to a decision or action. Otherwise remove it.
+- No icons needed. If a visual helps, use a chart or graph of the
+  data itself (sparkline, bar, trend), not a decorative icon. If
+  there is no data to chart, use text only.
+
+---
+## DASHBOARD RULES
+---
+
+- Include what helps the user see the state of things or take action:
+  charts, trends, recent items, things that need attention. Remove
+  anything that does not support a decision or action.
+- Do not go plain for its own sake, and do not overload with cards.
+  Separate sections with dividers or spacing (see Card restraint).
+- Order by importance: what needs action first, then trends, then
+  reference.
+- Skip the generic layout (a row of stat cards, then a grid of equal
+  cards). Use charts and tables for data.
+
 ---
 ## WHAT MUST NEVER HAPPEN
 ---
 
-- Do not duplicate labels across sidebar, header, subtitle, or page title unless there's a expand/collapse option in the sidebar
+- Do not repeat a label more than twice (sidebar plus one heading, header or page title) or restate it in a subtitle, unless there's an expand/collapse option in the sidebar
+- Do not put profile or account items in the sidebar — use a profile menu
 - Do not use synonyms for the same concept on the same screen
 - Do not invent navigation patterns that don't follow platform conventions
 - Do not place primary actions in unexpected locations without flagging
@@ -422,11 +543,17 @@ products. Do not default to patterns already known from training.
 - Do not use glow effects anywhere in the interface under any circumstances
 - Do not use single-side colored border lines as selection or highlight indicators
 - Do not fragment a single logical context across multiple cards
+- Do not use a card where a divider or spacing is enough
+- Do not add stat cards that do not lead to a decision or action
+- Do not invent a palette — use an established one
+- Do not add a dot, outline, or colored text to a pill
 - Do not disable a primary action without clearly communicating
   what the user must do to enable it
 - Do not repeat the same message twice in an empty state
 - Do not introduce scrolling when all content fits on a single screen
 - Do not hardcode visual values — all colors, sizes, spacing, and
   radii must be defined as design tokens and referenced from there
+- Do not leave any content-holding element without padding
+- Do not use any padding value that is not a defined padding token
 
 ---
