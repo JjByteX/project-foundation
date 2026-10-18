@@ -369,6 +369,12 @@ layout shell first. Every page renders inside it.
 The shell never re-renders when the user navigates.
 Only the content area changes.
 
+**Tab title:** the browser tab title changes with the page, in the
+format "Page | App" (for example "Feed | LinkedIn"). The page name
+matches the sidebar label. Never leave the default title or the same
+title on every page. The tab title does not count toward the label
+limit.
+
 ---
 ## SPACING AND SYMMETRY RULES
 ---
