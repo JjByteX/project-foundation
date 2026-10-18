@@ -7,8 +7,8 @@
 1. Read all existing entries before suggesting anything already decided.
 2. Never re-debate a logged decision. If it needs revisiting → flag it,
    don't silently override it.
-3. At every major milestone → add an entry, only if it passes the
-   filter below.
+3. At every major milestone → check whether a decision qualifies
+   under rule 4. If it does, add an entry.
 4. Log only truly major decisions. Apply this filter — a decision must
    pass ALL three, otherwise do not log it:
    - Hard to reverse?
@@ -16,7 +16,7 @@
    - Confusing without an explanation?
    Never log: naming, styling, small library choices, bug fixes,
    refactors, or anything easily changed later.
-   When unsure → do not log. A short log is a useful log.
+   When unsure → do not log.
 5. Before presenting options at a milestone → search current community
    consensus on each direction. Present findings, then wait for human
    decision before logging.
