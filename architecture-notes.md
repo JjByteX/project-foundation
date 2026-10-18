@@ -11,8 +11,10 @@
 3. Before touching any file → identify all files connected to it.
    This map is your reference. If a connection is not listed here,
    find it before proceeding — do not assume it is isolated.
-4. If the structure evolves during the build → update this file.
-   An outdated map is worse than no map.
+4. Update this file only when the structure changes in a major way:
+   a new module or feature, a tech stack change, a moved entry point,
+   or a new key dependency. Do not update it for new files, renames,
+   or small edits.
 5. Never create folders or layers that the current scale does not
    justify. Do not over-architect small projects. Do not under-
    structure large ones.
@@ -85,7 +87,8 @@ extra care when modified.
 ---
 ## STRUCTURE CHANGE LOG
 ---
-AI: when the structure changes during the build, log it here.
+AI: log only major structural changes (see rule 4). Never log minor
+changes. One sentence per cell. When unsure → do not log.
 
 | Date | Change | Reason |
 |------|--------|--------|
