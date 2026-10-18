@@ -11,14 +11,17 @@
    are answered by the human.
 3. Section 2 questions are active blockers. Do not pass the
    milestone they are tagged to without resolving them first.
-4. When uncertain mid-build → do not guess. Add a question to
-   Section 2 with its milestone tag, flag it to the human, and
-   wait for an answer before continuing.
+4. When uncertain mid-build → do not guess. First run the CHECK
+   BEFORE ASKING below. Only if the answer is truly not found, add a
+   question to Section 2 with its milestone tag, flag it to the human,
+   and wait for an answer before continuing.
 5. When a question is answered → move it to the Resolved log
    at the bottom. Never delete questions — resolved ones become
    part of the project's decision history.
 6. Never answer your own questions with assumptions. If a question
    is here, it means a human decision is required.
+7. Keep it tight. One question per row, one or two sentences. No
+   background, no explaining what other files already say.
 
 ---
 ## SECTION 1 — BEFORE STARTING
@@ -44,11 +47,31 @@ Each question is tagged to the milestone where it must be resolved.
 |   |          |           | [ ]       |
 
 ---
+## CHECK BEFORE ASKING
+---
+
+Before adding any question, confirm the answer is not already known.
+Read thoroughly, do not skim:
+
+1. Re-read project-brief.md, architecture-notes.md, constraints.md,
+   and decision-log.md in full.
+2. Read every question in this file, including Resolved. If the same
+   question, or one with the same answer, exists → do not add it.
+3. Check the existing code and files for the answer.
+4. If the answer is found anywhere above → use it. Do not ask.
+5. Ask only if the answer is missing AND it needs a human decision.
+   Never ask something you can look up, infer from the files, or
+   decide within the constraints.
+
+When unsure whether to ask → re-read first. Then ask only if still
+unanswered.
+
+---
 ## HOW TO ADD A QUESTION (AI instructions)
 ---
 
 When you hit uncertainty mid-build:
-1. Stop what you are doing
+1. Stop what you are doing and run CHECK BEFORE ASKING
 2. Write the question clearly and specifically —
    not "what should I do here?" but "should the user
    profile data be fetched on login or on page load,
