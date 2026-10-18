@@ -87,8 +87,7 @@ extra care when modified.
 ---
 ## STRUCTURE CHANGE LOG
 ---
-AI: log only major structural changes (see rule 4). Never log minor
-changes. One sentence per cell. When unsure → do not log.
+AI: log only major structural changes (rule 4). One sentence per cell.
 
 | Date | Change | Reason |
 |------|--------|--------|
